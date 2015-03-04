@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Add Feed</h2>
+<form class="add-feed-form form-horizontal" method="post" action="/add-feed">
+    <div class="control-group">
+        <label class="control-label" for="add-feed-author">Author</label>
+        <div class="controls">
+            <input class="form-input-text" type="text" id="add-feed-author" name="author" autocomplete="off">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="add-feed-link">Feed Link</label>
+        <div class="controls">
+            <input class="form-input-text" type="text" id="add-feed-link" name="feed-link" autocomplete="off">
+        </div>
+    </div>
+    <div class="control-group">
+        <input class="btn" type="submit">
+    </div>
+</form>
+{% endblock content %}

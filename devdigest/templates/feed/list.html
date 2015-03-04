@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Local Blogs for {{ region }}</h1>
+<a href="{{ add_feed_url }}">Add Feed</a>
+<div class="list-group">
+{{ pagination.links|safe }}
+{% for entry in links %}
+    <div class="list-group-item blog-entry">
+    <div class="author">
+        <div class="author-photo">
+            <img src="{{ url_for('static', filename='images/perry_platypus.png') }}">
+        </div>
+        <p>
+            {{ entry.1.author }}
+        </p>
+    </div>
+    <div class="list-group-item blog-entry-excerpt">
+        <a href="{{ entry.1.link }}" class="blog-entry-link">
+            <p class="blog-entry-title">{{ entry.1.title }}</p>
+        </a>
+        <p class="blog-entry-published">{{ entry.1.published }}</p>
+    </div>
+    </div>
+{% endfor %}
+{{ pagination.links|safe }}
+</div>
+{% endblock content %}
